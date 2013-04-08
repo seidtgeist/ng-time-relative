@@ -1,0 +1,33 @@
+{
+  "name": "ng-time-relative",
+  "version": "0.0.0",
+  "description": "Directive making date elements display time relatively",
+  "keywords": [
+    "angular",
+    "ng",
+    "directive",
+    "time",
+    "relative",
+    "ago"
+  ],
+  "bugs": {
+    "url": "https://github.com/evilhackerdude/ng-time-relative/issues"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:evilhackerdude/ng-time-relative.git"
+  },
+  "author": "Stephan Seidt <evilhackerdude@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "install": "make build"
+  },
+  "dependencies": {
+    "moment": "~2.0.0"
+  },
+  "devDependencies": {
+    "browserify": "~2.11.0",
+    "uglify-js": "~2.2.5"
+  }
+}

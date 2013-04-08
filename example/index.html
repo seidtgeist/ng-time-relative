@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="time">
+  <head>
+    <meta charset="utf-8">
+    <title>ng-time-relative example</title>
+  </head>
+  <body>
+    <p>
+      Party like it's
+      <time relative>1999</time>
+    </p>
+    <p>
+      <time class="relative" without-suffix>April 5, 2063</time>
+      until warp speed
+    </p>
+    <p>
+      The UNIX Epoch started
+      <time relative datetime="1970-01-01"></time>
+    </p>
+    <p>
+      Torment: Tides of Numenera was funded
+      <time class="relative" datetime="2013-04-06T00:00:00Z"></time>
+    </p>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"></script>
+    <script src="../dist/ng-time-relative.min.js"></script>
+    <script>
+      var app = angular.module('time', []);
+      app.constant('moment', moment);
+      ngTimeRelative(app);
+    </script>
+  </body>
+</html>
