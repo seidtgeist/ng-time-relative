@@ -13,8 +13,8 @@ To learn about other options see below.
 
 ## Download
 
-* Latest development: [ng-time-relative.js](https://raw.github.com/evilhackerdude/ng-time-relative/v0.1.0/dist/ng-time-relative.js)
-* Latest production: [ng-time-relative.min.js](https://raw.github.com/evilhackerdude/ng-time-relative/v0.1.0/dist/ng-time-relative.min.js)
+* Latest development: [ng-time-relative.js](https://raw.github.com/evilhackerdude/ng-time-relative/v0.2.0/dist/ng-time-relative.js)
+* Latest production: [ng-time-relative.min.js](https://raw.github.com/evilhackerdude/ng-time-relative/v0.2.0/dist/ng-time-relative.min.js)
 
 If you've understood programming you can also:
 
@@ -24,11 +24,26 @@ npm install ng-time-relative
 
 ## Usage
 
+Easy way:
+
+``` html
+<script src="ng-time-relative.js"></script>
+<script>
+// Add timeRelative as dependency to your module definition
+var app = angular.module('YourApp', ['timeRelative']);
+</script>
+```
+
+And add `timeRelative` to your module's dependencies to the `relative`
+directive.
+
+The module is also exposed as a CommonJS module and its dependencies
+can be manually injected.
+
 This library depends on the excellent
 [Moment.js](https://github.com/timrwood/moment/) ~2.0.0 for date
-parsing and formatting. `moment` needs to be provided as a constant
+parsing and formatting. `moment` can be provided as a constant
 like this:
-
 
 ``` js
 var app = angular.module('app', []);

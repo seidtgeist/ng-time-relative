@@ -1,8 +1,9 @@
 {
+  "browser": true,
   "es5": true,
   "globalstrict": true,
   "node": true,
-  "predef": ["angular"],
+  "predef": ["angular", "moment"],
   "quotmark": "single",
   "strict": true,
   "trailing": true,

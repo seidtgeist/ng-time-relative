@@ -6,6 +6,12 @@ exports = module.exports = function(module) {
 
 exports.directive = directive;
 
+if (angular) {
+  var mod = angular.module('timeRelative', []);
+  if (moment) mod.constant('moment', moment);
+  exports(mod);
+}
+
 function directive($timeout, moment) {
   return {
     restrict: 'AC',
