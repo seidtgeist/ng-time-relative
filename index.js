@@ -30,7 +30,7 @@ function directive($timeout, moment) {
         var withoutSuffix = 'withoutSuffix' in attrs;
 
         if (!attrs.title)
-          element.attr('title', date.format());
+          element.attr('title', date.format('LLLL'));
 
         function updateTime() {
           element.text(date.from(to(), withoutSuffix));
@@ -51,7 +51,7 @@ function directive($timeout, moment) {
           return 3660e3 - delta % 3600e3;
         }
 
-        element.bind('destroy', function() {
+        element.bind('$destroy', function() {
           $timeout.cancel(timeout);
         });
 
