@@ -44,7 +44,7 @@ function directive($timeout, moment) {
         }
 
         function nextUpdateIn() {
-          var delta = moment().diff(date);
+          var delta = Math.abs(moment().diff(date));
           if (delta < 45e3) return 45e3 - delta;
           if (delta < 90e3) return 90e3 - delta;
           if (delta < 45 * 60e3) return 60e3 - (delta + 30e3) % 60e3;
