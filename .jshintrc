@@ -1,6 +1,5 @@
 {
   "browser": true,
-  "es5": true,
   "globalstrict": true,
   "node": true,
   "predef": ["angular", "moment"],
