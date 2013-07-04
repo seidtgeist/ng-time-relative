@@ -13,8 +13,8 @@ To learn about other options see below.
 
 ## Download
 
-* Latest development: [ng-time-relative.js](https://raw.github.com/evilhackerdude/ng-time-relative/v0.2.1/dist/ng-time-relative.js)
-* Latest production: [ng-time-relative.min.js](https://raw.github.com/evilhackerdude/ng-time-relative/v0.2.1/dist/ng-time-relative.min.js)
+* Latest development: [ng-time-relative.js](https://raw.github.com/evilhackerdude/ng-time-relative/v0.3.0/dist/ng-time-relative.js)
+* Latest production: [ng-time-relative.min.js](https://raw.github.com/evilhackerdude/ng-time-relative/v0.3.0/dist/ng-time-relative.min.js)
 
 If you've understood programming you can also:
 
