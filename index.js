@@ -1,14 +1,38 @@
 'use strict';
 
 exports = module.exports = function(module) {
-  module.directive('relative', ['$timeout', 'moment', directive]);
+  module.
+
+    constant('timeRelativeConfig', {
+      calendar: {
+        en: {
+          lastDay : '[Yesterday], LT',
+          sameDay : '[Today], LT',
+          nextDay : '[Tomorrow], LT',
+          lastWeek : 'dddd, LT',
+          nextWeek : 'Next dddd, LT',
+          sameElse : 'LL'
+        }
+      }
+    }).
+
+    directive('relative', ['$timeout', 'moment', directive]).
+
+    run(function(moment, timeRelativeConfig) {
+      angular.forEach(timeRelativeConfig.calendar, function(translation, lang) {
+        moment.lang(lang, {calendar: translation});
+      });
+    });
 };
 
 exports.directive = directive;
 
 if (angular) {
   var mod = angular.module('timeRelative', []);
-  if (moment) mod.constant('moment', moment);
+  if (moment) {
+    mod.constant('moment', moment);
+    moment.lang('en', {});
+  }
   exports(mod);
 }
 
@@ -33,7 +57,14 @@ function directive($timeout, moment) {
           element.attr('title', date.format('LLLL'));
 
         function updateTime() {
-          element.text(date.from(to(), withoutSuffix));
+          element.text(diffString(date, to()));
+        }
+
+        function diffString(a, b) {
+          if (Math.abs(a.clone().startOf('day').diff(b, 'days', true)) < 1)
+            return a.from(b, withoutSuffix);
+          else
+            return a.calendar(b);
         }
 
         function updateLater() {
