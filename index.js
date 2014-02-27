@@ -49,7 +49,8 @@ function directive($timeout, moment) {
         $timeout.cancel(timeout);
 
         var date = moment(dateString);
-        if (!date) return;
+        if (!date || !date.isValid()) throw new Error('Invalid date');
+
         var to = function() { return moment(attrs.to); };
         var withoutSuffix = 'withoutSuffix' in attrs;
 
