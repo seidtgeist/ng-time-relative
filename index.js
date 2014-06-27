@@ -16,13 +16,13 @@ exports = module.exports = function(module) {
       }
     }).
 
-    directive('relative', ['$timeout', 'moment', directive]).
+    directive('relative', directive).
 
-    run(function(moment, timeRelativeConfig) {
+    run(['moment', 'timeRelativeConfig', function(moment, timeRelativeConfig) {
       angular.forEach(timeRelativeConfig.calendar, function(translation, lang) {
         moment.lang(lang, {calendar: translation});
       });
-    });
+    }]);
 };
 
 exports.directive = directive;
@@ -92,3 +92,5 @@ function directive($timeout, moment) {
     }
   };
 }
+
+directive.$inject = ['$timeout', 'moment'];
