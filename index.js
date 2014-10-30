@@ -27,9 +27,9 @@ exports = module.exports = function(module) {
 
 exports.directive = directive;
 
-if (angular) {
+if ('angular' in global) {
   var mod = angular.module('timeRelative', []);
-  if (moment) {
+  if ('moment' in global) {
     mod.constant('moment', moment);
     moment.lang('en', {});
   }
