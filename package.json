@@ -21,7 +21,11 @@
   "author": "Stephan Seidt <evilhackerdude@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "prepublish": "make build"
+    "clean": "rm -rf dist && mkdir dist",
+    "browserify": "browserify index.js -d -s ${npm_package_name} > dist/${npm_package_name}.js",
+    "uglify": "uglifyjs dist/${npm_package_name}.js > dist/${npm_package_name}.min.js",
+    "build": "npm run clean && npm run browserify && npm run uglify",
+    "prepublish": "npm run build"
   },
   "dependencies": {
     "moment": "~2.0.0"
