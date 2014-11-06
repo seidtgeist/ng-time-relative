@@ -21,7 +21,7 @@
   "author": "Stephan Seidt <evilhackerdude@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "install": "make build"
+    "prepublish": "make build"
   },
   "dependencies": {
     "moment": "~2.0.0"
