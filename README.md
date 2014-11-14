@@ -41,7 +41,7 @@ The module is also exposed as a CommonJS module and its dependencies
 can be manually injected.
 
 This library depends on the excellent
-[Moment.js](https://github.com/timrwood/moment/) ~2.0.0 for date
+[Moment.js](https://github.com/timrwood/moment/) ^2.0.0 for date
 parsing and formatting. `moment` can be provided as a constant
 like this:
 

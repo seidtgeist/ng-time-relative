@@ -28,7 +28,7 @@
     "prepublish": "npm run build"
   },
   "dependencies": {
-    "moment": "~2.0.0"
+    "moment": "^2.0.0"
   },
   "devDependencies": {
     "browserify": "^6.2.0",
