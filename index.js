@@ -19,8 +19,9 @@ exports = module.exports = function(module) {
     directive('relative', directive).
 
     run(['moment', 'timeRelativeConfig', function(moment, timeRelativeConfig) {
+      var locale = typeof moment.locale === 'function' ? 'locale' : 'lang';
       angular.forEach(timeRelativeConfig.calendar, function(translation, lang) {
-        moment.lang(lang, {calendar: translation});
+        moment[locale](lang, {calendar: translation});
       });
     }]);
 };
@@ -30,8 +31,9 @@ exports.directive = directive;
 if ('angular' in global) {
   var mod = angular.module('timeRelative', []);
   if ('moment' in global) {
+    var locale = typeof moment.locale === 'function' ? 'locale' : 'lang';
     mod.constant('moment', moment);
-    moment.lang('en', {});
+    moment[locale]('en', {});
   }
   exports(mod);
 }
