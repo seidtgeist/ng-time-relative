@@ -10,7 +10,7 @@ exports = module.exports = function(module) {
           sameDay : '[Today], LT',
           nextDay : '[Tomorrow], LT',
           lastWeek : 'dddd, LT',
-          nextWeek : 'Next dddd, LT',
+          nextWeek : '[Next] dddd, LT',
           sameElse : 'LL'
         }
       }
